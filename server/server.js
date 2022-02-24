@@ -7,11 +7,10 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../index.html"))
     
 });
+app.use(express.static(path.join(__dirname, '../')))
 
 const port = process.env.PORT || 4005;
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
-
-app.use(express.static(path.join(__dirname, '../')))
